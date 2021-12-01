@@ -4,6 +4,7 @@
     <string name="button">BUTTON</string>
     <string name="bye">Bye</string>
     <string name="new_text">Жми!!!</string>
+    <string name="random" />
 
 
 </resources>
