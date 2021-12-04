@@ -1,5 +1,7 @@
 package com.example.mochalovfirst
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,35 +9,45 @@ import android.widget.Button
 import android.widget.TextView
 import kotlin.random.Random
 
-const val Tag = "MainAktivity"
-const val Key = "randomText"
+private const val hello_key = "Это передача данных"
+
 class MainActivity : AppCompatActivity() {
-    lateinit var randomTextView: TextView
-    lateinit var randomButton: Button
+
+    lateinit var nextActivityButton: Button
+    lateinit var browserActivityButton: Button
+    lateinit var instaActivityButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        randomTextView = findViewById(R.id.random_text_view)
-        randomButton = findViewById(R.id.random_button)
-        if(savedInstanceState != null){
-            randomTextView.text = savedInstanceState.getString(Key)
+
+        nextActivityButton = findViewById(R.id.next_screen_activity)
+        browserActivityButton = findViewById(R.id.browser_activity)
+        instaActivityButton = findViewById(R.id.insta_activity)
+
+
+        nextActivityButton.setOnClickListener {
+            val secondActivityIntent: Intent = Intent(this, SecondActivity::class.java)
+            secondActivityIntent.putExtra(hello_key, null as String?)
+            startActivity(secondActivityIntent)
+
+        }
+        browserActivityButton.setOnClickListener {
+            val browser_link = Uri.parse("http://yandex.ru")
+            val browserActivityIntent: Intent = Intent(Intent.ACTION_VIEW, browser_link)
+            val chooser = Intent.createChooser(browserActivityIntent,"Browser")
+            startActivity(browserActivityIntent)
+
+
+        }
+        instaActivityButton.setOnClickListener {
+            val uri = Uri.parse("http://instagram.com")
+            val insta: Intent = Intent(Intent.ACTION_VIEW, uri)
+            insta.setPackage("com.instagram.android")
+            startActivity(insta);
+
         }
 
-        randomButton.setOnClickListener {
-            randomize()
-        }
 
-    }
-
-    fun randomize() {
-        randomTextView.text = Random.nextInt(until = 100).toString()
-
-
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(Key,randomTextView.text.toString())
     }
 
 
