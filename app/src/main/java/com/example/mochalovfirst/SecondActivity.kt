@@ -2,10 +2,10 @@ package com.example.mochalovfirst
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 private const val hello_key = "Это передача данных"
 
@@ -22,12 +22,11 @@ class SecondActivity : AppCompatActivity() {
 
         fatherActivityButton.setOnClickListener {
             val fathercallUri = Uri.parse("tel:+79159817345")
-            val intentfather = Intent(Intent.ACTION_DIAL, fathercallUri)
+            val intentfather = Intent(Intent.ACTION_CALL, fathercallUri)
             startActivity(intentfather)
 
 
         }
-
 
     }
 }
