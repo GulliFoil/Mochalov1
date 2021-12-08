@@ -21,12 +21,12 @@ class SecondActivity : AppCompatActivity() {
         fatherActivityButton = findViewById(R.id.call_father_activity)
 
         fatherActivityButton.setOnClickListener {
-            val fathercallUri = Uri.parse("tel:+79159817345")
-            val intentfather = Intent(Intent.ACTION_CALL, fathercallUri)
+            val intentfather = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+79159817345"))
             startActivity(intentfather)
 
 
         }
+
 
     }
 }
