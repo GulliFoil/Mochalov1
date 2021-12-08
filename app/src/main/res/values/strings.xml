@@ -7,9 +7,9 @@
     <string name="random">Позвонить \n    маме</string>
     <string name="text_second_screen">"       Это \n следующий \n     экран</string>
     <string name="browser">Яндекс</string>
-    <string name="callfather" >Папа</string>
-    <string name="callgrandmother" >Бабушка  \n    Люба</string>
+    <string name="callfather">Папа</string>
+    <string name="callgrandmother">Бабушка  \n    Люба</string>
     <string name="insta">Инстаграм</string>
-    <string name="callmother" >Мама</string>
+    <string name="callmother">Мама</string>
 
 </resources>

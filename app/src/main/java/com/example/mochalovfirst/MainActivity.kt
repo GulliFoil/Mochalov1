@@ -1,5 +1,6 @@
 package com.example.mochalovfirst
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -13,12 +14,16 @@ private const val hello_key = "Это передача данных"
 
 class MainActivity : AppCompatActivity() {
 
+
     lateinit var nextActivityButton: Button
     lateinit var browserActivityButton: Button
     lateinit var instaActivityButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
 
         nextActivityButton = findViewById(R.id.next_screen_activity)
         browserActivityButton = findViewById(R.id.browser_activity)
