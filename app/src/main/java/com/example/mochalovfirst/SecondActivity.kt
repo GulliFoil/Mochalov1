@@ -70,9 +70,9 @@ class SecondActivity : AppCompatActivity() {
 
                 if (isPermissionsGranted) {
                     // Do the task now
-                    toast("Permissions granted.")
+                    toast("Разрешения приняты.")
                 } else {
-                    toast("Permissions denied.")
+                    toast("Разрешения отклонены.")
                 }
                 return
             }
