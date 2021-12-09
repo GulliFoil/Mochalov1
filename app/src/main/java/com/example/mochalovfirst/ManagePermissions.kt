@@ -14,7 +14,7 @@ class ManagePermissions(val activity: Activity, val list: List<String>, val code
         if (isPermissionsGranted() != PackageManager.PERMISSION_GRANTED) {
             showAlert()
         } else {
-            activity.toast("Permissions already granted.")
+            //activity.toast("Permissions already granted.")
         }
     }
 
@@ -45,10 +45,10 @@ class ManagePermissions(val activity: Activity, val list: List<String>, val code
     // Show alert dialog to request permissions
     private fun showAlert() {
         val builder = AlertDialog.Builder(activity)
-        builder.setTitle("Need permission(s)")
-        builder.setMessage("Some permissions are required to do the task.")
-        builder.setPositiveButton("OK", { dialog, which -> requestPermissions() })
-        builder.setNeutralButton("Cancel", null)
+        builder.setTitle("Требование")
+        builder.setMessage("Для выполнения этой задачи требуются некоторые разрешения")
+        builder.setPositiveButton("Продолжить", { dialog, which -> requestPermissions() })
+        builder.setNeutralButton("Отменить", null)
         val dialog = builder.create()
         dialog.show()
     }

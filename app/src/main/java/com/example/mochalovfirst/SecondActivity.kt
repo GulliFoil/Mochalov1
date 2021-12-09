@@ -3,6 +3,7 @@ package com.example.mochalovfirst
 import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -10,6 +11,9 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.PermissionChecker.PERMISSION_DENIED
+import androidx.core.content.PermissionChecker.PERMISSION_GRANTED
 
 private const val hello_key = "Это передача данных"
 
@@ -38,8 +42,10 @@ class SecondActivity : AppCompatActivity() {
         fromFirstActivityText.text = textHTR
 
         motherActivityButton = findViewById(R.id.call_father_activity)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if( PERMISSION_DENIED!=0)
                 managePermissions.checkPermissions()
+        }
 
 
         motherActivityButton.setOnClickListener {
